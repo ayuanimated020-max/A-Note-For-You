@@ -1,36 +1,300 @@
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width,initial-scale=1">
-<title>For Our Wonderful Teachers</title>
-<style>
-*{box-sizing:border-box} body{margin:0;min-height:100vh;font-family:Georgia,serif;background:linear-gradient(135deg,#fffaf0,#f7efe2);color:#30271f;display:flex;align-items:center;justify-content:center;padding:24px}
-.card{max-width:720px;width:100%;background:rgba(255,255,255,.9);border:1px solid #e7d6b8;border-radius:28px;padding:42px 30px;text-align:center;box-shadow:0 18px 50px rgba(80,55,25,.14)}
-.small{letter-spacing:3px;text-transform:uppercase;font:600 12px Arial,sans-serif;color:#8a6a3f}.icon{font-size:48px;margin:10px}.line{width:70px;height:2px;background:#c9a66b;margin:20px auto}
-h1{font-size:clamp(32px,7vw,54px);margin:10px 0 8px}.sub{font:16px Arial,sans-serif;color:#6d6258;line-height:1.7}
-.message{font-size:21px;line-height:1.8;margin:28px auto;max-width:590px}
-.quote{font-style:italic;font-size:18px;color:#7b6040;margin:24px auto}
-.footer{margin-top:30px;font:13px Arial,sans-serif;color:#82766a}
-</style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="#f8f4ec">
+  <title>A Little Message of Gratitude</title>
+
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      min-height: 100vh;
+      background:
+        radial-gradient(circle at 15% 10%, rgba(196, 163, 93, 0.12), transparent 28%),
+        radial-gradient(circle at 85% 90%, rgba(196, 163, 93, 0.10), transparent 30%),
+        #f8f4ec;
+      color: #2d2b29;
+      font-family: Georgia, "Times New Roman", serif;
+      display: flex;
+      justify-content: center;
+      padding: 28px 16px;
+    }
+
+    .card {
+      width: 100%;
+      max-width: 760px;
+      min-height: calc(100vh - 56px);
+      background: rgba(255, 253, 248, 0.96);
+      border: 1px solid rgba(170, 135, 70, 0.28);
+      border-radius: 24px;
+      padding: 52px 42px 44px;
+      position: relative;
+      overflow: hidden;
+      box-shadow: 0 18px 50px rgba(74, 59, 35, 0.10);
+    }
+
+    .card::before,
+    .card::after {
+      content: "";
+      position: absolute;
+      width: 180px;
+      height: 180px;
+      border: 1px solid rgba(170, 135, 70, 0.12);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+
+    .card::before {
+      top: -105px;
+      left: -105px;
+    }
+
+    .card::after {
+      bottom: -105px;
+      right: -105px;
+    }
+
+    .eyebrow {
+      text-align: center;
+      font-family: Arial, Helvetica, sans-serif;
+      font-size: 11px;
+      letter-spacing: 4px;
+      color: #8b7040;
+      font-weight: 600;
+      margin-bottom: 25px;
+      text-transform: uppercase;
+    }
+
+    .ornament {
+      text-align: center;
+      color: #ad8a4a;
+      font-size: 28px;
+      line-height: 1;
+      margin-bottom: 18px;
+    }
+
+    h1 {
+      text-align: center;
+      color: #292723;
+      font-size: clamp(38px, 8vw, 64px);
+      line-height: 1.02;
+      font-weight: 700;
+      letter-spacing: -1.5px;
+    }
+
+    .subtitle {
+      text-align: center;
+      margin: 18px auto 0;
+      max-width: 560px;
+      color: #766f66;
+      font-size: clamp(17px, 3.5vw, 21px);
+      line-height: 1.7;
+      font-style: italic;
+    }
+
+    .divider {
+      width: 78px;
+      height: 1px;
+      background: #b3955d;
+      margin: 34px auto 38px;
+      position: relative;
+    }
+
+    .divider::after {
+      content: "✦";
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -53%);
+      background: #fffdf8;
+      color: #b3955d;
+      padding: 0 9px;
+      font-size: 12px;
+    }
+
+    .message {
+      max-width: 620px;
+      margin: 0 auto;
+      font-size: clamp(17px, 3.5vw, 20px);
+      line-height: 1.9;
+      color: #4d4943;
+      text-align: center;
+    }
+
+    .message .opening {
+      font-size: clamp(22px, 4.5vw, 28px);
+      line-height: 1.55;
+      color: #302e2a;
+      margin-bottom: 27px;
+    }
+
+    .highlight {
+      margin: 34px auto;
+      padding: 25px 22px;
+      border-top: 1px solid rgba(170, 135, 70, 0.30);
+      border-bottom: 1px solid rgba(170, 135, 70, 0.30);
+      color: #625845;
+      font-style: italic;
+      font-size: clamp(18px, 3.8vw, 22px);
+      line-height: 1.7;
+    }
+
+    .thanks {
+      margin-top: 32px;
+    }
+
+    .thanks p {
+      margin: 8px 0;
+    }
+
+    .final-line {
+      margin-top: 42px;
+      text-align: center;
+      color: #302d28;
+      font-size: clamp(24px, 5vw, 34px);
+      line-height: 1.4;
+      font-weight: 700;
+    }
+
+    .signature {
+      text-align: center;
+      margin-top: 26px;
+      color: #7b7368;
+      font-size: 15px;
+      letter-spacing: 0.5px;
+    }
+
+    .signature strong {
+      display: block;
+      margin-top: 7px;
+      color: #4d473f;
+      font-size: 17px;
+    }
+
+    .footer-ornament {
+      text-align: center;
+      margin-top: 35px;
+      color: #b3955d;
+      letter-spacing: 8px;
+      font-size: 13px;
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 12px;
+      }
+
+      .card {
+        min-height: calc(100vh - 24px);
+        border-radius: 18px;
+        padding: 38px 22px 34px;
+      }
+
+      .eyebrow {
+        letter-spacing: 3px;
+        font-size: 9px;
+      }
+
+      .divider {
+        margin-top: 28px;
+        margin-bottom: 30px;
+      }
+
+      .message {
+        line-height: 1.8;
+      }
+
+      .highlight {
+        margin: 28px auto;
+        padding: 20px 14px;
+      }
+    }
+
+    @media (prefers-reduced-motion: no-preference) {
+      .card {
+        animation: appear 0.9s ease-out both;
+      }
+
+      @keyframes appear {
+        from {
+          opacity: 0;
+          transform: translateY(12px);
+        }
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+    }
+  </style>
 </head>
+
 <body>
-<main class="card">
-  <div class="small">A little message of gratitude</div>
-  <div class="icon">📚</div>
-  <h1>To Our Wonderful Teachers</h1>
-  <div class="line"></div>
-  <p class="sub">Some lessons are written on the board.<br>Others stay with us for life.</p>
-  <p class="message">
-    Thank you for teaching us, guiding us, encouraging us, and believing in us.
-    Your patience, kindness and dedication make a difference every single day.
-  </p>
-  <p class="quote">“A great teacher inspires, guides and leaves a lasting mark.”</p>
-  <p class="message" style="font-size:19px">
-    With heartfelt respect and gratitude,<br>
-    <strong>Happy Teachers' Day! 🌸</strong>
-  </p>
-  <div class="footer">Made with gratitude for the teachers who make learning meaningful.</div>
-</main>
+  <main class="card">
+
+    <div class="eyebrow">A Little Message of Gratitude</div>
+
+    <div class="ornament">✦</div>
+
+    <h1>To the Teachers<br>Who Make a Difference</h1>
+
+    <p class="subtitle">
+      Some lessons are written on the board.<br>
+      Some are carried in our hearts long after the classroom is empty.
+    </p>
+
+    <div class="divider"></div>
+
+    <section class="message">
+
+      <p class="opening">
+        Dear Teachers,
+      </p>
+
+      <p>
+        Every day, you give us more than just knowledge.
+        You teach us to question, to learn, to try again,
+        to believe in ourselves, and to become better human beings.
+      </p>
+
+      <p style="margin-top: 24px;">
+        Behind every answer we find, every mistake we learn from,
+        and every dream we dare to pursue, there is often a teacher
+        who patiently guided us along the way.
+      </p>
+
+      <div class="highlight">
+        Your words may sometimes be forgotten,<br>
+        your lessons may change with time,<br>
+        but the confidence, values, and memories you leave behind<br>
+        stay with us.
+      </div>
+
+      <div class="thanks">
+        <p><strong>Thank you for your patience.</strong></p>
+        <p><strong>Thank you for your guidance.</strong></p>
+        <p><strong>Thank you for believing in us — even when we sometimes forget to believe in ourselves.</strong></p>
+      </div>
+
+      <p class="final-line">
+        Thank you for being a part of our journey.
+      </p>
+
+    </section>
+
+    <div class="signature">
+      With deepest respect, heartfelt gratitude, and warm wishes,
+      <strong>From your students</strong>
+    </div>
+
+    <div class="footer-ornament">✦ ✦ ✦</div>
+
+  </main>
 </body>
 </html>
